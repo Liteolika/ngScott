@@ -20,6 +20,7 @@
                 <td>{{ movie.year }}</td>
                 <td>{{ movie.rating }}</td>
                 <td>
+                    <a class="btn btn-default" href="#/edit/{{movie.id}}">Edit</a>
                     <a class="btn" href="#/details/{{movie.id}}">Details</a>
                     <button ng-click="list.increaseRating(movie)" class="btn">+</button>
                     <button ng-click="list.decreaseRating(movie)" class="btn">-</button>

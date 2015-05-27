@@ -1,0 +1,20 @@
+﻿<div class="col-md-8" ng-controller="EditController as edit">
+    <form name="editForm">
+        <label>Title</label>
+        <input type="text" name="title" ng-model="edit.movie.title" />
+
+        <label>Year</label>
+        <input type="text" name="year" ng-model="edit.movie.year" />
+
+        <label>Rating</label>
+        <input type="text" name="rating" ng-model="edit.movie.rating" />
+
+        <input type="submit" value="Save" />
+
+    </form>
+
+    <pre>
+        {{ editForm | json }}
+    </pre>
+
+</div>

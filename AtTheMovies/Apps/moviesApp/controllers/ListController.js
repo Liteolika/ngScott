@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    var ListController = function ($log, movieData, $timeout) {
+    var ListController = function ($log, movieData, $timeout, $location) {
 
         var model = this;
 
@@ -10,6 +10,7 @@
 
         var onMovies = function (movies) {
             model.movies = movies;
+            $log.info('Retrieved ' + movies.length + ' movies from the dataservice.');
         };
 
         model.counter = 0;
@@ -20,6 +21,10 @@
         }
 
         $timeout(incrCounter, 1000);
+
+        model.edit = function (id) {
+            $location.path("/edit/" + id);
+        };
 
         model.increaseRating = function (movie) {
             if (movie.rating >= 5) {

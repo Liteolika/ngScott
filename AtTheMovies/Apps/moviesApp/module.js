@@ -23,6 +23,9 @@
             }).
         when("/details/:id", {
             templateUrl: "/apps/moviesApp/templates/details.html"
+        }).
+        when("/edit/:id?", {
+            templateUrl: "/apps/moviesApp/templates/edit.html"
         })
             .otherwise({
                 redirectTo: "/list"

@@ -11,6 +11,10 @@
             })
         }
 
+        var save = function (movie) {
+            return $http.put(baseUrl, movie);
+        }
+
         var getAll = function () {
 
             return $http.get(baseUrl)
@@ -21,7 +25,8 @@
 
         return {
             getAll: getAll,
-            getById: getById
+            getById: getById,
+            save: save
         };
 
     };
