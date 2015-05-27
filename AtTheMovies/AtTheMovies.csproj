@@ -98,6 +98,7 @@
     <Content Include="Apps\moviesApp\controllers\EditController.js" />
     <Content Include="Apps\moviesApp\controllers\ListController.js" />
     <Content Include="Apps\moviesApp\module.js" />
+    <Content Include="Apps\moviesApp\navbar.html" />
     <Content Include="Apps\moviesApp\services\movieData.js" />
     <Content Include="Apps\moviesApp\templates\about.html" />
     <Content Include="Apps\moviesApp\templates\details.html" />

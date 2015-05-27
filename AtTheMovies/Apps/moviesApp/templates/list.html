@@ -6,16 +6,26 @@
 
     {{ list.counter }}
 
+    {{ 1 + 1 | checkmark }}
+
     <table class="table">
-        <thead></thead>
-        <tr>
-            <th>Title</th>
-            <th>Year</th>
-            <th>Rating</th>
-            <th></th>
-        </tr>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Rating</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th><input type="search" placeHolder="Search" ng-model="list.searchTerm" /></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        
         <tbody>
-            <tr ng-repeat="movie in list.movies" ng-class="list.rateMovie(movie)">
+            <tr ng-repeat="movie in list.movies | filter:{title:list.searchTerm}" ng-class="list.rateMovie(movie)">
                 <td>{{ movie.title }}</td>
                 <td>{{ movie.year }}</td>
                 <td>{{ movie.rating }}</td>

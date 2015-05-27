@@ -13,6 +13,9 @@
             $log.info('Retrieved ' + movies.length + ' movies from the dataservice.');
         };
 
+        model.orderTerm = '-rating';
+
+        model.searchTerm = '';
         model.counter = 0;
 
         var incrCounter = function () {
