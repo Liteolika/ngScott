@@ -9,23 +9,38 @@
         $httpProvider.defaults.headers.common["X-myconfig"] = "Ohhhyes";
     });
 
-    app.config(function ($routeProvider) {
+    app.config(function ($routeProvider, $locationProvider) {
+
+        //$locationProvider.html5Mode(true);
+
         $routeProvider
             .when("/list", {
                 templateUrl: "/apps/moviesApp/templates/list.html"
                 //,controller: "ListController as list"
-        })
+            })
             .when("/about", {
                 templateUrl: "/apps/moviesApp/templates/about.html"
+            }).
+        when("/details/:id", {
+            templateUrl: "/apps/moviesApp/templates/details.html"
         })
             .otherwise({
-            redirectTo: "/list"
-        })
+                redirectTo: "/list"
+            })
     });
 
     app.run(function ($rootScope, $log) {
         $log.info("Up and running!");
         $rootScope.version = angular.version;
+
+        //$rootScope.$on("$routeChangeError", function (event, current, previous) {
+        //    $rootScope.routeError = {
+        //        event: event,
+        //        current: current,
+        //        previous: previous
+        //    };
+        //});
+
     });
 
     // Bootstrapping before angular starts.

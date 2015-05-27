@@ -4,6 +4,13 @@
 
         var baseUrl = "/api/movies/";
 
+        var getById = function (id) {
+            return $http.get(baseUrl + id)
+            .then(function (response) {
+                return response.data;
+            })
+        }
+
         var getAll = function () {
 
             return $http.get(baseUrl)
@@ -13,7 +20,8 @@
         };
 
         return {
-            getAll: getAll
+            getAll: getAll,
+            getById: getById
         };
 
     };
