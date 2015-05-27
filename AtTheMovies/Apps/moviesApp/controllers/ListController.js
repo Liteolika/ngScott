@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    var ListController = function ($log, movieData) {
+    var ListController = function ($log, movieData, $timeout) {
 
         var model = this;
 
@@ -11,6 +11,15 @@
         var onMovies = function (movies) {
             model.movies = movies;
         };
+
+        model.counter = 0;
+
+        var incrCounter = function () {
+            model.counter++;
+            $timeout(incrCounter, 1000);
+        }
+
+        $timeout(incrCounter, 1000);
 
         model.increaseRating = function (movie) {
             if (movie.rating >= 5) {
@@ -39,7 +48,7 @@
 
     };
 
-    ListController.$inject = ['$log', 'movieData'];
+    ListController.$inject = ['$log', 'movieData', '$timeout'];
     var module = angular.module("moviesApp");
     module.controller("ListController", ListController);
 
