@@ -1,0 +1,26 @@
+﻿<div class="col-md-4" ng-controller="ListController as list">
+
+    <div ng-show="list.errorMessage" class="alert alert-danger">
+        {{ list.errorMessage }}
+    </div>
+    <table class="table">
+        <thead></thead>
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Rating</th>
+            <th></th>
+        </tr>
+        <tbody>
+            <tr ng-repeat="movie in list.movies" ng-class="list.rateMovie(movie)">
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.year }}</td>
+                <td>{{ movie.rating }}</td>
+                <td>
+                    <button ng-click="list.increaseRating(movie)" class="btn">+</button>
+                    <button ng-click="list.decreaseRating(movie)" class="btn">-</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>  
