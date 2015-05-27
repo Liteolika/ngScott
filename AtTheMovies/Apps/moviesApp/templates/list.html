@@ -8,6 +8,19 @@
 
     {{ 1 + 1 | checkmark }}
 
+    <button ng-click="list.throwMe()" class="btn btn-danger">Throw exception</button>
+
+    <div ng-show="list.showAlerts">
+
+        <lo-alert type="danger" close="list.closeAlerts()" reason="list.reason1">Alert oNe</lo-alert>
+        <lo-alert type="info" reason="list.reason2">Alert two. You have {{ list.movies.length }} movies.</lo-alert>
+        <lo-alert type="warning" reason="list.reason3">Third alert. You have {{ list.movies.length }} movies.</lo-alert>
+
+
+        {{ list.reason1 }}
+        {{ list.reason2 }}
+        {{ list.reason3 }}
+    </div>
     <table class="table">
         <thead>
             <tr>

@@ -13,6 +13,16 @@
             $log.info('Retrieved ' + movies.length + ' movies from the dataservice.');
         };
 
+        model.showAlerts = true;
+
+        model.closeAlerts = function () {
+            model.showAlerts = false;
+        };
+
+        model.throwMe = function () {
+            throw Error("Oops...");
+        };
+
         model.orderTerm = '-rating';
 
         model.searchTerm = '';
